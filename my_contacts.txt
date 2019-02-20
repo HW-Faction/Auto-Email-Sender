@@ -1,4 +1,2 @@
-John john20@gmail.com
-Doe doe50@gmail.com
-HW hw49@gmail.com
 PSN psn144@gmail.com
+HW hw49@gmail.com

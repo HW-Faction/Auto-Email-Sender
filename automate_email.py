@@ -8,6 +8,13 @@ from email.mime.text import MIMEText
 
 import credentials
 
+import os
+
+# system commands 
+clear = 'clear' # clear screen
+header = 'sudo ./Header.sh'
+
+
 
 def get_contacts(filename):
     names = []
@@ -44,9 +51,9 @@ def main():
         message = message_template.substitute(PERSON_NAME=name.title())
 
         # setup the message parameters
-        msg['From'] = credentials.ADDRESS
+        msg['From'] = credentials.EMAIL_ADDRESS
         msg['To'] = email
-        msg['Subject'] = 'Automated Email Sending with Python' # change subject here
+        msg['Subject'] = 'Auto Email Sender' # change subject here
 
         # add message body
         msg.attach(MIMEText(message, 'plain'))
@@ -57,6 +64,9 @@ def main():
 
     # close the SMTP session and close the connection
     server.quit()
+
+os.system(header)
+print('-'*128)
 
 
 if __name__ == '__main__':
